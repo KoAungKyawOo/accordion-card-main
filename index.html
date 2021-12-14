@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
+
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @font-face {
+      font-family: Kumbh Sans;
+      src: url(https://fonts.google.com/specimen/Kumbh+Sans);
+    }
+
+    body {
+      width: 1440px;
+      height: auto;
+      font-family: "Kumbh Sans";
+      background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+      background-repeat: no-repeat;
+    }
+
+    .main {
+      width: 914px;
+      height: 500px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 2em;
+      margin-top: 7.5%;
+    }
+
+    .img {
+      top: 38%;
+      left: -94px;
+      z-index: 1;
+    }
+
+    .imgOne {
+      width: 850px;
+      top: -245px;
+      left: -450px;
+    }
+
+    .imgTwo {
+      width: 470px;
+      top: 55px;
+      left: -70px;
+    }
+
+    .text-section>div {
+      border-bottom: 1px solid hsl(240, 6%, 50%);
+      font-weight: 400;
+    }
+
+    .text-section div {
+      color: hsl(240, 6%, 50%);
+    }
+
+    .text-section a {
+      text-decoration: none;
+      color: hsl(240, 6%, 50%);
+      font-weight: 700;
+    }
+
+    .accordion_button {
+      position: relative;
+      display: flex;
+      width: 100%;
+    }
+
+    .accordion_button:not(.collapsed)::after {
+      transform: rotate(-180deg);
+      background-image: url(./images/icon-arrow-down.svg);
+    }
+
+    .accordion_button::after {
+      flex-shrink: 0;
+      width: 1rem;
+      height: 1rem;
+      margin-left: auto;
+      content: "";
+      background-repeat: no-repeat;
+      background-size: 1rem;
+      transition: transform 0.2s ease-in-out;
+      background-image: url(./images/icon-arrow-down.svg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .accordion-button::after {
+        transition: none;
+      }
+    }
+
+    .accordion_button:focus {
+      color: hsl(237, 12%, 33%);
+    }
+
+    .text-section a:hover {
+      color: hsl(14, 88%, 65%)
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main d-flex position-relative mb-5">
+    <img class="position-absolute img" src="./images/illustration-box-desktop.svg" alt="">
+    <div class="col overflow-hidden">
+      <div class="position-relative">
+        <img class="position-absolute imgOne" src="./images/bg-pattern-desktop.svg" alt="">
+        <img class="position-absolute imgTwo" src="./images/illustration-woman-online-desktop.svg" alt="">
+      </div>
+    </div>
+    <div class="col-5 m-5 overflow-auto">
+      <div class="text-section flex-column">
+        <h1 class="my-4">FAQ</h1>
+        <div class="py-3">
+          <a class="accordion_button collapsed" type="button" href="#collapseOne" role="button"
+            data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse">
+            How many team members can I invite?
+          </a>
+          <div class="collapse" id="collapseOne">
+            You can invite up to 2 additional users on the Free plan. There is no
+            limit on team members for the Premium plan.
+          </div>
+        </div>
+        <div class="py-3">
+          <a href="#collapseTwo" class="accordion_button collapsed" type="button" role="button"
+            data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse">
+            What is the maximum file upload size?
+          </a>
+          <div class="collapse" id="collapseTwo">
+            No more than 2GB. All files in your
+            account must fit your allotted storage space.
+          </div>
+        </div>
+        <div class="py-3">
+          <a href="#collapseThree" class="accordion_button collapsed" type="button" role="button"
+            data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse">
+            How do I reset my password?
+          </a>
+          <div class="collapse" id="collapseThree">
+            Click “Forgot password” from the login page or “Change password” from your
+            profile page. A reset link will be emailed to you.
+          </div>
+        </div>
+        <div class="py-3">
+          <a href="#collapseFour" class="accordion_button collapsed" type="button" role="button"
+            data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse">
+            Can I cancel my
+            subscription?
+          </a>
+          <div class="collapse" id="collapseFour">
+            Yes! Send us a message and we’ll process your request no
+            questions asked.
+          </div>
+        </div>
+        <div class="py-3">
+          <a href="#collapseFive" class="accordion_button collapsed" type="button" role="button"
+            data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse">
+            Do you provide additional support?
+          </a>
+          <div class="collapse" id="collapseFive">
+            Chat and email support
+            is available 24/7. Phone lines are open during normal business hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution mb-5">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your
+      Name Here</a>.
+  </div>
+  <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
