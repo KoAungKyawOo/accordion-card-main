@@ -19,38 +19,88 @@
     }
 
     body {
-      width: 1440px;
-      height: auto;
       font-family: "Kumbh Sans";
-      background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
-      background-repeat: no-repeat;
     }
 
-    .main {
-      width: 914px;
-      height: 500px;
-      margin: 0 auto;
-      background-color: white;
-      border-radius: 2em;
-      margin-top: 7.5%;
+    @media (min-width: 500px) {
+      body {
+        /* width: 1440px; */
+        height: auto;
+        background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+        background-repeat: no-repeat;
+      }
+
+      .main {
+        width: 914px;
+        height: 500px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 2em;
+        margin-top: 7.5%;
+      }
+
+      .main>div {
+        overflow: hidden;
+      }
+
+      .img {
+        top: 38%;
+        left: -94px;
+        z-index: 1;
+      }
+
+      .imgOne {
+        width: 850px;
+        top: -245px;
+        left: -450px;
+      }
+
+      .imgTwo {
+        width: 470px;
+        top: 55px;
+        left: -70px;
+      }
+
+
+      .mobile {
+        display: none;
+      }
     }
 
-    .img {
-      top: 38%;
-      left: -94px;
-      z-index: 1;
-    }
+    @media (max-width:499px) {
+      body {
+        background-color: hsl(273, 75%, 66%);
+      }
 
-    .imgOne {
-      width: 850px;
-      top: -245px;
-      left: -450px;
-    }
+      .main {
+        background-color: white;
+        margin-top: 150px;
+        border-radius: 1em;
+      }
 
-    .imgTwo {
-      width: 470px;
-      top: 55px;
-      left: -70px;
+      .mobile {
+        display: block;
+      }
+
+      .img,
+      .imgOne,
+      .imgTwo {
+        display: none;
+      }
+
+      .mobile-bg {
+        top: 0px;
+        left: 50%;
+        margin-left: -120px;
+      }
+
+      .mobile-woman {
+        width: 14rem;
+        top: -120px;
+        left: 50%;
+        margin-left: -7rem;
+        z-index: 0;
+      }
     }
 
     .text-section>div {
@@ -91,12 +141,6 @@
       background-image: url(./images/icon-arrow-down.svg);
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .accordion-button::after {
-        transition: none;
-      }
-    }
-
     .accordion_button:focus {
       color: hsl(237, 12%, 33%);
     }
@@ -117,15 +161,17 @@
 </head>
 
 <body>
-  <div class="main d-flex position-relative mb-5">
+  <div class="main d-flex position-relative mb-5 flex-column flex-sm-row mx-3">
     <img class="position-absolute img" src="./images/illustration-box-desktop.svg" alt="">
-    <div class="col overflow-hidden">
+    <img class="mobile mobile-bg position-absolute" src="./images/bg-pattern-mobile.svg" alt="">
+    <div class="col">
       <div class="position-relative">
         <img class="position-absolute imgOne" src="./images/bg-pattern-desktop.svg" alt="">
         <img class="position-absolute imgTwo" src="./images/illustration-woman-online-desktop.svg" alt="">
+        <img class="mobile mobile-woman position-absolute" src="./images/illustration-woman-online-mobile.svg" alt="">
       </div>
     </div>
-    <div class="col-5 m-5 overflow-auto">
+    <div class="col col-sm-5 m-5 overflow-auto">
       <div class="text-section flex-column">
         <h1 class="my-4">FAQ</h1>
         <div class="py-3">
